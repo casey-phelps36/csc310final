@@ -13,16 +13,20 @@ st.set_page_config(
 # load data
 @st.cache_data
 def load_data():
-    skaters = pd.read_csv("data/master_skaters_clean.csv")
-    goalies = pd.read_csv("data/master_goalies_clean.csv")
-    skater_preds = pd.read_csv("data/skater_predictions.csv")
+    skaters = pd.read_csv(
+        "https://github.com/casey-phelps36/csc310final/releases/download/v1.0/master_skaters_clean.csv"
+    )
+    goalies = pd.read_csv(
+        "https://github.com/casey-phelps36/csc310final/releases/download/v1.0/master_goalies_clean.csv"
+    )
+    skater_preds = pd.read_csv(
+        "https://github.com/casey-phelps36/csc310final/releases/download/v1.0/skater_predictions.csv"
+    )
 
-    # filter for all situations only
-    skaters = skaters[skaters["situation"] == "all"].copy()
-    goalies = goalies[goalies["situation"] == "all"].copy()
-    skater_preds = skater_preds[skater_preds["situation"] == "all"].copy()
+    skaters = skaters[skaters["situation"] == "all"]
+    goalies = goalies[goalies["situation"] == "all"]
+    skater_preds = skater_preds[skater_preds["situation"] == "all"]
 
-    # add save percentage if missing
     if "save_percentage" not in goalies.columns:
         goalies["save_percentage"] = 1 - (goalies["goals"] / goalies["ongoal"])
 
