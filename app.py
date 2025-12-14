@@ -6,7 +6,6 @@ import plotly.graph_objects as go
 # page config
 st.set_page_config(
     page_title="NHL Performance Dashboard",
-    page_icon="🏒",
     layout="wide"
 )
 
