@@ -13,14 +13,14 @@ st.set_page_config(
 # load data
 @st.cache_data
 def load_data():
-    skater_preds = pd.read_csv(
-        "https://github.com/casey-phelps36/csc310final/releases/tag/skaterpreds"
-    )
     skaters = pd.read_csv(
-        "https://github.com/casey-phelps36/csc310final/releases/tag/skatercsv"
+        "https://github.com/casey-phelps36/csc310final/releases/download/data-files/master_skaters_clean.csv"
     )
     goalies = pd.read_csv(
-        "https://github.com/casey-phelps36/csc310final/releases/tag/goaliecsv"
+        "https://github.com/casey-phelps36/csc310final/releases/download/data-files/master_goalies_clean.csv"
+    )
+    skater_preds = pd.read_csv(
+        "https://github.com/casey-phelps36/csc310final/releases/download/data-files/skater_predictions.csv"
     )
 
     skaters = skaters[skaters["situation"] == "all"]
