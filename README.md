@@ -15,7 +15,7 @@ This project is an interactive data science dashboard that allows users to explo
 
 ---
 
-## App URL
+## App URL (easiest option)
 Copy and paste this URL into your browser: https://csc310final.streamlit.app/ 
 
 ## Run the App Locally
